@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Teste Mesa Inc with vuex-auth</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <style>
+        a, button { cursor: pointer; }
+        button { outline: none; }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vuex-auth doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+
     <script src="https://kit.fontawesome.com/9093fba346.js" crossorigin="anonymous"></script>
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHI7Ds0I7NZVA55NSW1ziaoe1fuOLMVE&libraries=places&callback=initAutocomplete" defer></script>
     <script>
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -76,21 +90,8 @@
           map.fitBounds(bounds);
         });
       }
-      </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHI7Ds0I7NZVA55NSW1ziaoe1fuOLMVE&libraries=places&callback=initAutocomplete" async defer></script>
-
-
-    <style>
-        a, button { cursor: pointer; }
-        button { outline: none; }
-    </style>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vuex-auth doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+      // google.maps.event.addDomListener(window, "load", initAutocomplete);
+    </script>
   </body>
 </html>

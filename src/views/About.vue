@@ -9,6 +9,19 @@
   </div>
 </template>
 
+<script>
+// export default {
+//   mounted: function () {
+//     this.method1() // method1 will execute at pageload
+//   },
+//   methods: {
+//     method1: function tester () {
+//       alert('aaaaaaaa')
+//     }
+//   }
+// }
+</script>
+
 <style>
     form {
       width: 55%;
