@@ -8,12 +8,12 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: 'home',
   components: {}
 }
-</script>
+</script> -->
 
 <style>
   .home {
