@@ -29,7 +29,7 @@
     }
 
     #map {
-      height: 550px;
+      height: 450px;
     }
 
     #description {
@@ -106,5 +106,14 @@
     }
     #target {
       width: 345px;
+    }
+
+    /* === Smartphones === */
+    @media only screen and (min-width : 320px) and (max-width : 767px) {
+      #pac-input {
+        top: 65px !important;
+        width: 350px !important;
+        margin-left: -175px !important;
+      }
     }
 </style>

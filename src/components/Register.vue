@@ -67,4 +67,16 @@ export default {
     text-align: left;
     display: block;
   }
+
+  /* === Smartphones === */
+    @media only screen and (min-width : 320px) and (max-width : 767px) {
+      .register {
+        width: 90% !important;
+      }
+
+      .btn-primary {
+        width: 100% !important;
+        height: 45px;
+      }
+    }
 </style>
