@@ -20,6 +20,16 @@
 //     }
 //   }
 // }
+export default {
+  mounted () {
+    var script = document.createElement('script');
+    script.onload = function() {
+      console.log('Script loaded and ready');
+    };
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHI7Ds0I7NZVA55NSW1ziaoe1fuOLMVE&libraries=places&callback=initAutocomplete';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+}
 </script>
 
 <style>
