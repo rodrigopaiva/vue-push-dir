@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/"><i class="fas fa-home"></i> Home</router-link> |
-      <router-link to="/about"><i class="fas fa-file-alt"></i> About</router-link> |
-      <router-link to="/login"><i class="fas fa-file-alt"></i> Login</router-link>
-      <span v-if="isLoggedIn"> | <a @click="logout">Logout <i class="fas fa-sign-out-alt"></i></a></span>
+      <router-link to="/about"><i class="fas fa-file-alt"></i> About Maps</router-link>
+      <span class="for-logout" v-if="isLoggedIn"> | <a @click="logout">Logout <i class="fas fa-sign-out-alt"></i></a></span>
+      <span class="for-login" v-else> | <router-link to="/login"><i class="fas fa-sign-in-alt"></i> Login</router-link></span>
     </div>
     <router-view/>
   </div>
@@ -62,7 +62,11 @@ export default {
     color: #42b983;
   }
 
-  #nav span a {
+  #nav span.for-logout a {
     color: darkred;
+  }
+
+  #nav span.for-login a {
+    color: blue;
   }
 </style>
