@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content=en><meta http-equiv=cache-control content=no-cache><title>Teste Mesa Inc with vuex-auth</title><meta name=description content=""><meta name=keywords content=""><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta name=apple-touch-fullscreen content=yes><meta name=HandheldFriendly content=true><meta name=format-detection content="telephone=yes"><meta name=DC.title content="titulo do projeto"><meta name=DC.publisher content="nome do desenvolvedor"><meta name=DC.creator.address content=dev_name@gmail.com><meta name=robots content=Index><meta name=author content="nome do desenvolvedor"><meta name=rating content=general><meta name=distribution content=global><meta name=copyright content="titulo do projeto - Todos os direitos reservados"><link rel=apple-touch-icon href=images/apple-touch-icon.png><link rel=apple-touch-icon sizes=76x76 href=images/touch-icon-ipad.png><link rel=apple-touch-icon sizes=120x120 href=images/touch-icon@2x.png><link rel=apple-touch-icon sizes=152x152 href=images/touch-icon-ipad@2x.png><meta property=og:description content=Descricao.><meta property=og:image content=http://www.meusite.com.br/images/thumbnail-share.jpg><meta property=og:site_name content="titulo do site"><meta property=og:title content="titulo do site"><meta property=og:type content=website><meta property=og:url content=http://www.meusite.com.br/index.php><meta name=twitter:card content=summary_large_image><meta name=twitter:site content=http://www.meusite.com.br><meta name=twitter:creator content=@twitter-user><meta name=twitter:title content="titulo do site"><meta name=twitter:description content=descricao.><meta name=twitter:image content=http://www.meusite.com.br/images/thumbnail-share.jpg><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css integrity=sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M crossorigin=anonymous><style>a, button { cursor: pointer; }
+        button { outline: none; }</style><link href=/vue-push-dir/static/css/app.e5a66d605216108d106dd813de65b650.css rel=stylesheet></head><body><noscript><strong>We're sorry but vuex-auth doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=https://kit.fontawesome.com/9093fba346.js crossorigin=anonymous></script><script>function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -8.052357, lng: -34.928338},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }</script><script type=text/javascript src=/vue-push-dir/static/js/manifest.b44f1b833c7861316e7f.js></script><script type=text/javascript src=/vue-push-dir/static/js/vendor.f2c0c8da653fa1927eca.js></script><script type=text/javascript src=/vue-push-dir/static/js/app.bbf835750b1d0a675281.js></script></body></html>
