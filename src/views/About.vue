@@ -10,24 +10,12 @@
 </template>
 
 <script>
-// export default {
-//   mounted: function () {
-//     this.method1() // method1 will execute at pageload
-//   },
-//   methods: {
-//     method1: function tester () {
-//       alert('aaaaaaaa')
-//     }
-//   }
-// }
 export default {
-  mounted () {
-    var script = document.createElement('script');
-    script.onload = function() {
-      console.log('Script loaded and ready');
-    };
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHI7Ds0I7NZVA55NSW1ziaoe1fuOLMVE&libraries=places&callback=initAutocomplete';
-    document.getElementsByTagName('head')[0].appendChild(script);
+  created () {
+    // embed script for google maps api
+    let ckeditor = document.createElement('script')
+    ckeditor.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHI7Ds0I7NZVA55NSW1ziaoe1fuOLMVE&libraries=places&callback=initAutocomplete')
+    document.head.appendChild(ckeditor)
   }
 }
 </script>
